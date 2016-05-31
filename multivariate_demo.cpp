@@ -1,36 +1,12 @@
 #include <iostream>
 #include <map>
 #include <chrono>
-#include <vector>
-#include <symengine/symbol.h>
-#include <symengine/polynomial.h>
-#include <symengine/add.h>
-#include <symengine/printer.h>
-#include <symengine/dict.h>
-#include <symengine/symbol.h>
-#include <symengine/symengine_rcp.h>
-#include <symengine/expression.h>
+#include <symengine/polys/uexprpoly.h>
 #include <symengine/series_generic.h>
+#include <symengine/polynomial_multivariate.h>
+#include <symengine/series_generic_multivariate.h>
 using namespace std;
 using namespace SymEngine;
-
-void debugprint(const MultivariatePolynomial &p){
-  cout << p.__str__() << endl;
-  for(auto a : p.vars_){
-    cout << a->__str__() << " ";
-  }
-  cout << endl;
-  cout << "{ ";
-  for(auto a : p.dict_){
-    cout << "{{" ;
-    for(auto b : a.first){
-      cout << b << ",";
-    }
-    cout << "}, " <<  a.second << "}, ";
-  }
-  cout << "}" << endl;
-}
-
 
 int main(){
     RCP<const Basic> f[44];
