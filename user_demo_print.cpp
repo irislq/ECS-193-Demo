@@ -33,10 +33,10 @@ int main()
 	// User can edit Q
 	MultivariatePolynomialExpr Q = MultivariatePolynomialExpr::create({x,y,z}, 
 		{{{0,0,0}, Expression(symbol("a"))},
-    		{{0,0,1}, Expression(symbol("b"))}, 
+		{{0,0,1}, Expression(symbol("b"))}, 
 		{{0,1,0}, Expression(symbol("c"))},
 		{{1,0,0}, Expression(symbol("d"))},
-	        {{1,2,0}, Expression(symbol("f"))}});
+		{{1,2,0}, Expression(symbol("f"))}});
 	std::cout << "Printing the multivariate polynomial: ";
 	std::cout << Q.toString() << std::endl;
 	std::cout << std::endl;
