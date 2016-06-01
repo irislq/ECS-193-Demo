@@ -17,12 +17,20 @@ int main()
     auto t1 = std::chrono::high_resolution_clock::now();
     auto res = UnivariateSeries::series(ex, "x", N);
     auto t2 = std::chrono::high_resolution_clock::now();
-    std::cout << "Univariate series expansion of " << *ex << " with precision " << N << " takes ";
+    std::cout << "Univariate series expansion of " << *ex << "by UnivariateSeries with precision " << N << " takes ";
     std::cout << std::chrono::duration_cast<std::chrono::milliseconds>(t2 - t1)
                      .count()
               << "ms" << std::endl;
               std::cout << std::endl;
 
+    t1 = std::chrono::high_resolution_clock::now();
+    auto res = MultivariateSeries::series(ex, "x", N);
+    t2 = std::chrono::high_resolution_clock::now();
+    std::cout << "Univariate series expansion of " << *ex << "by MultivariateSeries with precision " << N << " takes ";
+    std::cout << std::chrono::duration_cast<std::chrono::milliseconds>(t2 - t1)
+                     .count()
+              << "ms" << std::endl;
+              std::cout << std::endl;              
 
     auto ex2 = mul(sin(x), cos(y));
     int M = 100;
