@@ -18,6 +18,7 @@ int main(){
     RCP<const Symbol> z = symbol("z");
 
 #define TESTS
+
 #ifdef TESTS
 
     RCP<const UIntPoly> p11 = uint_poly(x, UIntDict({{1,1_z},{2,2_z},{3,2_z}}));
@@ -117,7 +118,7 @@ auto t1 = std::chrono::high_resolution_clock::now();
 auto t2 = std::chrono::high_resolution_clock::now();
 
 
-#define PRINTOUTS
+//#define PRINTOUTS
 //#define MISSES
 #define ONE
 #define TWO
